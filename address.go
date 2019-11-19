@@ -211,14 +211,14 @@ func (a *Address) getStreetName(s *[]string) (r string, err error) {
 			return "", fmt.Errorf("This kind of address requires a number in the street name.  Example:  CR 123;  County Road 100")
 		}
 
-		// // That's an L, not a 1
-		// _, err = strconv.Atoi((*s)[l+1])
+		// That's an L, not a 1
+		_, err = strconv.Atoi((*s)[l+1])
 
-		// // It's not a number so we don't want that crap.
-		// if err != nil {
-		// 	return "", fmt.Errorf("This kind of address requires a number in the street name.  Example:  CR 123;  County Road 100")
-		// 	continue
-		// }
+		// It's not a number so we don't want that crap.
+		if err != nil {
+			return "", fmt.Errorf("This kind of address requires a number in the street name.  Example:  po box 123;  rr 100")
+			continue
+		}
 		st := strings.Join([]string{
 			r,
 			(*s)[(l + 1)],
