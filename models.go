@@ -775,8 +775,7 @@ var RuralBoxes map[string]string = map[string]string{
 }
 
 var Pairs map[string]string = map[string]string{
-	"po":     "box",
-	"county": "road",
+	"po": "box",
 	// CR is in here because it's dumb, but this is the only street name value that _has_ to be converted.
 	// "cr": "cr",
 }
@@ -784,6 +783,6 @@ var Pairs map[string]string = map[string]string{
 var NumberRequired []string = []string{
 	"po box",
 	"rr",
-	"county road",
-	"cr",
+	// "county road",
+	// "cr",
 }
